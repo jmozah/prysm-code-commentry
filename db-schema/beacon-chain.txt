@@ -1,0 +1,32 @@
+
+
+attestationsBucket:
+  - doesn't seem to be used in beacon-chain
+
+blocksBucket:
+  - Key : blockRoot [32]byte
+  - Value : SignedBeaconBlock (SSZ encoded and Snappy compressed)
+
+stateBucket:
+  - Key : blockRoot [32]byte
+  - Value : BeaconState (SSZ encoded and Snappy compressed) 
+
+stateSummaryBucket:
+  - Key : blockRoot [32]byte
+  - Value : StateSummary (SSZ encoded and Snappy compressed) 
+
+proposerSlashingsBucket:
+  - Key : slashingRoot [32]byte
+  - Value : ProposerSlashing (SSZ encoded and Snappy compressed) 
+
+attesterSlashingsBucket:
+
+
+voluntaryExitsBucket:
+
+chainMetadataBucket:
+
+
+checkpointBucket:
+
+powchainBucket:
