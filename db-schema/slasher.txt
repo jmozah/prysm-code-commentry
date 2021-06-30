@@ -1,0 +1,23 @@
+## Slasher DB buckets and its schema
+
+
+### attestedEpochsByValidator
+
+- Key   : ValidatorIndex (encoded)
+- Value : EpochId (enoded) 
+
+### attestationRecordsBucket
+- Key   : att.SigningRoot + FastSum64([]ValidatorIndex, encoded)
+- Value : AttestationRecord (encoded)
+
+### attestationDataRootsBucket
+- Key   : EpochId (encoded) + ValidatorIndex (encoded)
+- Value : att.SigningRoot + AttestationRecord (encoded)
+
+### proposalRecordsBucket
+- Key   : SlotId (encoded) + ValidatorIndex (encoded)
+- Value : ProposalRecod (encoded)
+
+### slasherChunksBucket
+- Key   : Marshalled(ChunkKind + ChunkKey)
+- Value : SlasherChunk (encoded)
